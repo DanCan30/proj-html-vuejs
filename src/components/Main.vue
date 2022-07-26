@@ -25,30 +25,10 @@
       </div>
     
       <div id="cards-container">
-        <div class="card horizontal-card">
-          <h3>lorem</h3>
-          <p>1</p>
-        </div>
-        <div class="card vertical-card">
-          <h3>lorem</h3>
-          <p>2</p>
-        </div>
-        <div class="card vertical-card">
-          <h3>lorem</h3>
-          <p>3</p>
-        </div>
-        <div class="card vertical-card">
-          <h3>lorem</h3>
-          <p>4</p>
-        </div>
-        <div class="card vertical-card">
-          <h3>lorem</h3>
-          <p>5</p>
-        </div>
-        <div class="card horizontal-card">
-          <h3>lorem</h3>
-          <p>6</p>
-        </div>
+
+        <Article v-for="(article, index) in articles" :key="index"
+        :article="article"/>
+
       </div>
 
     </section>
@@ -94,8 +74,59 @@
 </template>
 
 <script>
+
+import Article from "./Article.vue";
+
+
 export default {
 
+  components: {
+    Article,
+  },
+
+
+  data: function() {
+    return {
+      articles: [
+        {
+          title: "Technology and music",
+          subtitle: " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem, a! Corrupti sapiente voluptatem numquam.",
+          imageUrl: "blog_music_techo.jpg",
+          isVertical: false,
+        },
+        {
+          title: "Taking it back to the old school",
+          subtitle: " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem, a! Corrupti sapiente voluptatem numquam.",
+          imageUrl: "blog-post1.jpg",
+          isVertical: true,
+        },
+        {
+          title: "While my guitar gently weeps",
+          subtitle: " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem, a! Corrupti sapiente voluptatem numquam.",
+          imageUrl: "blog-post3.jpg",
+          isVertical: true,
+        },
+        {
+          title: "It just sounds better",
+          subtitle: " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem, a! Corrupti sapiente voluptatem numquam.",
+          imageUrl: "blog-post4.jpg",
+          isVertical: true,
+        },
+        {
+          title: "Sharing the stage with a legend",
+          subtitle: " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem, a! Corrupti sapiente voluptatem numquam.",
+          imageUrl: "blog-post2.jpg",
+          isVertical: true,
+        },
+        {
+          title: "The flavor of rock",
+          subtitle: " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem, a! Corrupti sapiente voluptatem numquam.",
+          imageUrl: "blog_flavor_rock.jpg",
+          isVertical: false,
+        },
+      ]
+    }
+  }
 }
 </script>
 
