@@ -1,0 +1,10 @@
+@mixin container  {
+    width: 50%;
+    margin: 0 auto;
+
+}
+
+@mixin large-container {
+    width: 60%;
+    margin: 0 auto;
+}
