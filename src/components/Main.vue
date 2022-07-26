@@ -50,20 +50,18 @@
     <section id="live-date-section">
       <div id="live-date-wrapper">
         
-      <h2>
-        Live Dates
-      </h2>
-      <hr>
-      <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem, a! Corrupti sapiente voluptatem numquam.
-      </p>
-      <ul>
-        <li><span>+</span>lorem</li>
-        <li><span>+</span>lorem</li>
-        <li><span>+</span>lorem</li>
-        <li><span>+</span>lorem</li>
-        <li><span>+</span>lorem</li>
-      </ul>
+        <h2>
+          Live Dates
+        </h2>
+        <hr>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem, a! Corrupti sapiente voluptatem numquam.
+        </p>
+        <ul>
+          <li v-for="(gig, index) in upcomingGigs" :key="index"
+          ><span>+</span><Upcoming :gig="gig"/>
+          </li>
+        </ul>
 
       </div>
       <a href="#">view all live dates</a>
@@ -76,12 +74,14 @@
 <script>
 
 import Article from "./Article.vue";
+import Upcoming from "./Upcoming.vue";
 
 
 export default {
 
   components: {
     Article,
+    Upcoming,
   },
 
 
@@ -90,39 +90,71 @@ export default {
       articles: [
         {
           title: "Technology and music",
-          subtitle: " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem, a! Corrupti sapiente voluptatem numquam.",
+          subtitle: " Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
           imageUrl: "blog_music_techo.jpg",
           isVertical: false,
         },
         {
           title: "Taking it back to the old school",
-          subtitle: " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem, a! Corrupti sapiente voluptatem numquam.",
+          subtitle: " Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
           imageUrl: "blog-post1.jpg",
           isVertical: true,
         },
         {
           title: "While my guitar gently weeps",
-          subtitle: " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem, a! Corrupti sapiente voluptatem numquam.",
+          subtitle: " Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
           imageUrl: "blog-post3.jpg",
           isVertical: true,
         },
         {
           title: "It just sounds better",
-          subtitle: " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem, a! Corrupti sapiente voluptatem numquam.",
+          subtitle: " Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
           imageUrl: "blog-post4.jpg",
           isVertical: true,
         },
         {
           title: "Sharing the stage with a legend",
-          subtitle: " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem, a! Corrupti sapiente voluptatem numquam.",
+          subtitle: " Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
           imageUrl: "blog-post2.jpg",
           isVertical: true,
         },
         {
           title: "The flavor of rock",
-          subtitle: " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem, a! Corrupti sapiente voluptatem numquam.",
+          subtitle: " Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
           imageUrl: "blog_flavor_rock.jpg",
           isVertical: false,
+        },
+      ],
+
+      upcomingGigs: [
+        {
+          date: "17/08/2020",
+          eventName: "gem festival 2020",
+          country: "anakalia",
+          state: "georgia",
+        },
+        {
+          date: "24/09/2020",
+          eventName: "groovefest",
+          state: "dominical republic"
+        },
+        {
+          date: "31/10/2020",
+          eventName: "oasis festival 2020",
+          country: "marrakech",
+          state: "morocco",
+        },
+        {
+          date: "07/11/2020",
+          eventName: "moga festival",
+          country: "essaouria",
+          state: "morocco",
+        },
+        {
+          date: "10/12/2020",
+          eventName: "envision festival",
+          country: "uvita",
+          state: "costa rica"
         },
       ]
     }
@@ -273,12 +305,12 @@ export default {
           letter-spacing: 3px;
           color: $brandMainColor;
           text-transform: uppercase;
+          cursor: pointer;
 
           span {
             padding: 0 1rem;
             color: white;
             font-size: 1rem;
-            cursor: pointer;
           }
         }
       }

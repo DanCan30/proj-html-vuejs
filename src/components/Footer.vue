@@ -3,12 +3,8 @@
     <section id="footer-top">
       <img src="../assets/img/logo_footer.png" alt="Avada Music logo">
       <ul>
-        <li><a href="#"> lorem </a></li>
-        <li><a href="#"> lorem </a></li>
-        <li><a href="#"> lorem </a></li>
-        <li><a href="#"> lorem </a></li>
-        <li><a href="#"> lorem </a></li>
-        <li><a href="#"> lorem </a></li>
+        <li v-for="(link, index) in footerNavLinks" :key="index"><a :href="link.url"> {{ link.text }} </a></li>
+        
       </ul>
     </section>
     <section id="footer-bottom">
@@ -17,10 +13,7 @@
       </div>
       <div id="socials">
         <ul>
-          <li><a href="#">social</a></li>
-          <li><a href="#">social</a></li>
-          <li><a href="#">social</a></li>
-          <li><a href="#">social</a></li>
+          <li v-for="(social, index) in footerSocialIcons" :key="index"><a :href="social.url"><i :class="`fa-brands fa-${social.socialName}`"></i></a></li>
         </ul>
       </div>
 
@@ -30,7 +23,55 @@
 
 <script>
 export default {
-
+  data: function() {
+    return {
+      footerNavLinks: [
+        {
+          text: "Home",
+          url: "#",
+        },
+        {
+          text: "Meet The Band",
+          url: "#",
+        },
+        {
+          text: "Live Dates",
+          url: "#",
+        },
+        {
+          text: "Latest News",
+          url: "#",
+        },
+        {
+          text: "Albums",
+          url: "#",
+        },
+        {
+          text: "Fans",
+          url: "#",
+        },
+      ],
+      
+      footerSocialIcons: [
+        {
+          socialName: "facebook-f",
+          url: "#",
+        },
+        {
+          socialName: "twitter",
+          url: "#",
+        },
+        {
+          socialName: "instagram",
+          url: "#",
+        },
+        {
+          socialName: "youtube",
+          url: "#",
+        },
+      ]
+    }
+  }
 }
 </script>
 
@@ -54,11 +95,20 @@ export default {
         li {
           display: inline-block;
           font-family: $serifFont;
-          padding: 0 1rem;
+          padding: 0 .5rem;
 
           a {
             text-decoration: none;
             color: #aeaeaeaf;
+            font-size: 1.2rem;              
+            display: inline-block;
+            background-color: $lightBgColor;
+            padding: 1rem;
+            border-radius: 5px;
+
+            &:hover {
+              color: $mainTextsFontColor;
+            }
           }
         }
       }
@@ -73,6 +123,11 @@ export default {
         font-family: $serifFont;
         color: #aeaeaeaf;
       }
+
+      #socials li:first-child a {
+        padding: 1rem 1.2rem;
+      }
+
     }
   }
 </style>

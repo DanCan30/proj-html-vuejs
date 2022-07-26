@@ -27,7 +27,7 @@ export default {
 @import "../assets/stiles/variables.scss";
 
     .card {
-
+        cursor: pointer;
         position: relative;
         
         img {
@@ -37,11 +37,24 @@ export default {
         }
 
         .article-infos {
+            padding: 2rem;
             background-color: $lightBgColor;
             position: absolute;
             bottom: 0;
             left: 0;
             right: 0;
+
+            h3 {
+                font-size: 1.5rem;
+                color: $brandMainColor;
+            }
+
+            p {
+                color: $paragraphsFontColor;
+                font-family: $serifFont;
+                font-size: 1.3rem;
+                line-height: 2rem;
+            }
         }
     }
 
