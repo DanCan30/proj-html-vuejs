@@ -26,6 +26,6 @@ export default {
 
 @import "./assets/stiles/common.scss";
 @import "./assets/stiles/variables.scss";
-
+@import "~@fortawesome/fontawesome-free/css/all.css";
 
 </style>
