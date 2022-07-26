@@ -62,7 +62,7 @@ export default {
     }
 
     p {
-      font-family: $subtextsFontFamily;
+      font-family: $mentionsFontFamily;
       font-size: 2rem;
       color: $mainTextsFontColor;
     }

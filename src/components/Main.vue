@@ -52,7 +52,44 @@
       </div>
 
     </section>
+
     <a href="#">view all latest news</a>
+    <section id="play-section">
+
+      <div id="play-section-wrapper">
+        <p>
+          "I just listened to it and said to myself, "Man, I really love this album." Still, today, it just sounds so fresh.
+          It sounds full of ideas. These guys knew what they were doing. They're good. And they're inventive. I haven't heard 
+          anything this year that's as inventive. I don't really expect to."
+        </p>
+        <img src="../assets/img/band_interview_play_icon.png" alt="Play icon">
+      </div>
+
+    </section>
+
+    <section id="live-date-section">
+      <div id="live-date-wrapper">
+        
+      <h2>
+        Live Dates
+      </h2>
+      <hr>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem, a! Corrupti sapiente voluptatem numquam.
+      </p>
+      <ul>
+        <li><span>+</span>lorem</li>
+        <li><span>+</span>lorem</li>
+        <li><span>+</span>lorem</li>
+        <li><span>+</span>lorem</li>
+        <li><span>+</span>lorem</li>
+      </ul>
+
+      </div>
+      <a href="#">view all live dates</a>
+
+    </section>
+    
   </main>
 </template>
 
@@ -99,7 +136,8 @@ export default {
     }
 
     #intro-section-wrapper p,
-    #article-section-wrapper p {
+    #article-section-wrapper p,
+    #live-date-section p {
       font-family: Georgia, 'Times New Roman', Times, serif;
       max-width: 60rem;
       color: $paragraphsFontColor;
@@ -165,6 +203,57 @@ export default {
       letter-spacing: 3px;
     }
 
+    #play-section {
+      background-image: url(../assets/img/home-testimonial-parallax.jpg);
+      background-size: cover;
+      text-align: center;
+      padding: 20rem 0;
+
+      #play-section-wrapper {
+        @include container;
+
+        p {
+        font-family: $mentionsFontFamily;
+        color: $mainTextsFontColor;
+        font-size: 2rem;
+        }
+
+        img {
+          padding-top: 4rem;
+          cursor: pointer;
+        }
+      }
+    
+    }
+    
+    #live-date-wrapper {
+      @include large-container;
+      padding-bottom: 8rem;
+
+      ul {
+        list-style: none;
+
+        li {
+          display: block;
+          background-color: $lightBgColor;
+          margin-bottom: 1rem;
+          padding: .5rem 2rem;
+          font-size: 1.3rem;
+          letter-spacing: 3px;
+          color: $brandMainColor;
+          text-transform: uppercase;
+
+          span {
+            padding: 0 1rem;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  
+    
   }
 
 
