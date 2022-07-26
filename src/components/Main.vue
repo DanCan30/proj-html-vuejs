@@ -138,7 +138,7 @@ export default {
     #intro-section-wrapper p,
     #article-section-wrapper p,
     #live-date-section p {
-      font-family: Georgia, 'Times New Roman', Times, serif;
+      font-family: $serifFont;
       max-width: 60rem;
       color: $paragraphsFontColor;
       margin: auto;
@@ -225,7 +225,7 @@ export default {
       }
     
     }
-    
+
     #live-date-wrapper {
       @include large-container;
       padding-bottom: 8rem;
@@ -237,7 +237,7 @@ export default {
           display: block;
           background-color: $lightBgColor;
           margin-bottom: 1rem;
-          padding: .5rem 2rem;
+          padding: .8rem 2rem;
           font-size: 1.3rem;
           letter-spacing: 3px;
           color: $brandMainColor;
