@@ -76,7 +76,7 @@ export default {
             left: 0;
             width: 100%;
             height: 100%;
-            box-shadow: inset 0 0 0 300px rgba(234, 74, 86, .5);
+            background-color: rgba(234, 74, 86, .5);
             color: $mainTextsFontColor;
             transition: .2s;
             transition-delay: .1s;

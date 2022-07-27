@@ -150,6 +150,7 @@ export default {
               font-size: 2.5rem;
               opacity: .5;
               position: relative;
+              font-weight: 300;
 
               &::after {
                 content: "";
