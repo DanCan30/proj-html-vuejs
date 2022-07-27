@@ -4,7 +4,7 @@
       <img src="../assets/img/logo_footer.png" alt="Avada Music logo">
       <ul class="footer-nav">
         <li v-for="(link, index) in navLinks" :key="index">
-          <Navbar class="nav-links"
+          <NavbarElement class="nav-links"
           :link="link"/>
         </li>
         
@@ -25,12 +25,12 @@
 </template>
 
 <script>
-import Navbar from "./Navbar.vue";
+import NavbarElement from "./NavbarElement.vue";
 
 export default {
 
   components: {
-    Navbar,
+    NavbarElement,
   },
 
   props: {

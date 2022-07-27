@@ -4,7 +4,19 @@
     <div id="topbar">
       <img src="../assets/img/avada-music-logo.png" alt="Avada Logo">
       <nav>
-        <i class="fa-solid fa-bars"></i>
+        
+        <i @click="expandNavbar()" class="fa-solid fa-bars"></i>
+
+        <div id="header-navbar" :class="{'expanded': navExpanded === true}">
+        <i v-show="navExpanded" @click="collapseNavbar()" class="fa-solid fa-xmark"></i>
+          <ul>
+            <li v-for="(link, index) in navLinks" :key="index">
+              <NavbarElement
+              :link="link" />
+            </li>
+          </ul>
+        </div>
+
       </nav>
     </div>
 
@@ -23,17 +35,26 @@
 
 <script>
 
-import Navbar from "./Navbar.vue";
+import NavbarElement from "./NavbarElement.vue";
 
 export default {
 
   components: {
-    Navbar
+    NavbarElement
+  },
+
+  props: {
+    navLinks: {
+      type: Array,
+      required: true
+    }
   },
 
   data: function() {
     return {
       isScrolled: false,
+
+      navExpanded: false,
     }
   },
 
@@ -51,6 +72,14 @@ export default {
       } else {
         this.isScrolled= false;
       }
+    },
+
+    expandNavbar: function() {
+      this.navExpanded = true;
+    },
+
+    collapseNavbar: function() {
+      this.navExpanded = false;
     }
   },
 
@@ -76,9 +105,77 @@ export default {
       align-items: center;
       padding: 2rem 4rem;
       position: fixed;
+      z-index: 1;
       top: 0;
       left: 0;
       width: 100%;
+
+      img {
+        z-index: 2;
+      }
+
+      #header-navbar {
+        background-color: $brandMainColor;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 100%;
+        transition: all .3s;
+
+        &.expanded {
+          left: 0;
+        }
+
+        i {
+          color: $mainTextsFontColor;
+          font-size: 2.5rem;
+          cursor: pointer;
+          position: absolute;
+          top: 3rem;
+          right: 4rem;
+        }
+
+        ul {
+          list-style: none;
+          padding: 8rem 0 5rem;
+
+          li {
+            display: block;
+            text-align: center;
+            padding: 1rem;
+
+            a {
+              color: $mainTextsFontColor;
+              text-decoration: none;
+              font-size: 2.5rem;
+              opacity: .5;
+              position: relative;
+
+              &::after {
+                content: "";
+                display: inline-block;
+                background-color: white;
+                height: 2px;
+                width: 0;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                transition: .3s;
+              }
+
+              &:hover {
+                opacity: 1;
+              }
+
+              &:hover::after {
+                width: 100%;
+              }
+
+
+            }
+          }
+        }
+      }
 
       i {
         color: $mainTextsFontColor;
@@ -156,7 +253,12 @@ export default {
       right: 5rem;
       font-size: 1rem;
       color: $mainTextsFontColor;
-      transition: 1s;
+      transition: .2s;
+
+      &:hover {
+        background-color: $brandMainColor;
+        transform: scale(1.4);
+      }
 
       &.visible {
         bottom: 0;
