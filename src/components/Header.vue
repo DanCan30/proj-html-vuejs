@@ -204,6 +204,8 @@ export default {
         display: inline-block;
         padding-bottom: 25rem;
         position: relative;
+        width: 34rem;
+
 
         &::after {
           display: inline-block;
@@ -221,10 +223,11 @@ export default {
           text-transform: uppercase;
           text-decoration: none;
           padding: 1rem 2.5rem;
-          letter-spacing: 4px;
+          letter-spacing: 3px;
           font-size: 1.2rem;
           border-radius: 3px;
           margin-top: 5rem;
+          transition: .3s;
 
           &.main-btn {
             color: $mainTextsFontColor;
@@ -237,6 +240,14 @@ export default {
             border: 1px solid $mainTextsFontColor;
             margin-left: 1rem;
           }
+
+          
+          &:hover {
+            background-color: white;
+            color: black;
+            letter-spacing: 5px;
+          }
+
         }
       }
 

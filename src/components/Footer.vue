@@ -100,6 +100,7 @@ export default {
             padding: .5rem;
             transition: all .2s;
             color: #aeaeaeaf;
+            font-size: 1.2rem;
 
             &:hover {
               color: $mainTextsFontColor;

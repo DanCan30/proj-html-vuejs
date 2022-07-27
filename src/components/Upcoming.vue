@@ -66,7 +66,7 @@ export default {
         padding: 1.5rem;
 
         .gig-map {
-            width: 30%;
+            width: 25%;
             height: 15rem;
             overflow: hidden;
 
@@ -78,7 +78,7 @@ export default {
         }
 
         .gig-details {
-            width: 65%;
+            width: 67%;
 
             h4 {
                 color: white;

@@ -276,6 +276,13 @@ export default {
       padding: 5rem;
       font-size: 1.5rem;
       letter-spacing: 3px;
+      transition: .3s;
+
+      &:hover {
+        background-color: white;
+        color: black;
+        letter-spacing: 5px;
+      }
     }
 
     #play-section {
