@@ -2,8 +2,11 @@
   <footer>
     <section id="footer-top">
       <img src="../assets/img/logo_footer.png" alt="Avada Music logo">
-      <ul>
-        <li v-for="(link, index) in footerNavLinks" :key="index"><a :href="link.url"> {{ link.text }} </a></li>
+      <ul class="footer-nav">
+        <li v-for="(link, index) in navLinks" :key="index">
+          <Navbar class="nav-links"
+          :link="link"/>
+        </li>
         
       </ul>
     </section>
@@ -22,35 +25,23 @@
 </template>
 
 <script>
+import Navbar from "./Navbar.vue";
+
 export default {
+
+  components: {
+    Navbar,
+  },
+
+  props: {
+    navLinks: {
+      type: Array,
+      required: true
+    }
+  },
+
   data: function() {
     return {
-      footerNavLinks: [
-        {
-          text: "Home",
-          url: "#",
-        },
-        {
-          text: "Meet The Band",
-          url: "#",
-        },
-        {
-          text: "Live Dates",
-          url: "#",
-        },
-        {
-          text: "Latest News",
-          url: "#",
-        },
-        {
-          text: "Albums",
-          url: "#",
-        },
-        {
-          text: "Fans",
-          url: "#",
-        },
-      ],
       
       footerSocialIcons: [
         {
@@ -71,7 +62,8 @@ export default {
         },
       ]
     }
-  }
+  },
+
 }
 </script>
 
@@ -92,27 +84,28 @@ export default {
       ul {
         list-style: none;
 
+      }
+
+    }
+
+    #footer-top {
+      
         li {
           display: inline-block;
           font-family: $serifFont;
           padding: 0 .5rem;
 
-          a {
+          a.nav-links {
             text-decoration: none;
+            padding: .5rem;
+            transition: all .2s;
             color: #aeaeaeaf;
-            font-size: 1.2rem;              
-            display: inline-block;
-            background-color: $lightBgColor;
-            padding: 1rem;
-            border-radius: 5px;
 
             &:hover {
               color: $mainTextsFontColor;
             }
           }
         }
-      }
-
     }
 
     #footer-bottom {
@@ -124,9 +117,33 @@ export default {
         color: #aeaeaeaf;
       }
 
-      #socials li:first-child a {
-        padding: 1rem 1.2rem;
+      #socials li{
+
+        padding: 0 .5rem;
+        display: inline-block;
+
+        a {
+          background-color: $lightBgColor;
+          color: #aeaeaeaf;
+          font-size: 1.2rem;              
+          display: inline-block;
+          border-radius: 5px;
+          transition: all .2s;
+          padding: 1rem 1.2rem;
+          border-radius: 5px;
+          transition: all .2s;
+
+      
+          &:hover {
+            color: $mainTextsFontColor;
+          }
+        }
+
+        &:first-child a {
+          padding: 1rem 1.5rem;
+        }
       }
+    
 
     }
   }

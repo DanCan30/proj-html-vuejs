@@ -16,13 +16,48 @@
         <a href="#" class="secondary-btn">live dates</a>
       </div>
     </section>
-    <a id="top-anchor" href="#top-page"><i class="fa-solid fa-angle-up"></i></a>
+    <a id="top-anchor" :class="{'visible': isScrolled}" href="#top-page"><i class="fa-solid fa-angle-up"></i></a>
   </header>
 
 </template>
 
 <script>
+
+import Navbar from "./Navbar.vue";
+
 export default {
+
+  components: {
+    Navbar
+  },
+
+  data: function() {
+    return {
+      isScrolled: false,
+    }
+  },
+
+  props: {
+    navLinks: {
+      type: Array,
+      required: true,
+    }
+  },
+
+  methods: {
+    scrollCheck: function() {
+      if(window.scrollY !== 0) {
+        this.isScrolled = true;
+      } else {
+        this.isScrolled= false;
+      }
+    }
+  },
+
+
+  created() {
+    window.addEventListener("scroll", this.scrollCheck);
+  }
 
 }
 </script>
@@ -117,10 +152,15 @@ export default {
       border-radius: 10px 10px 0 0;
       background-color: #323233;
       position: fixed;
-      bottom: 0;
+      bottom: -3rem;
       right: 5rem;
       font-size: 1rem;
       color: $mainTextsFontColor;
+      transition: 1s;
+
+      &.visible {
+        bottom: 0;
+      }
     }
   }
   

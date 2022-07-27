@@ -1,8 +1,10 @@
 <template>
   <div id="app">
-    <Header />
+    <Header 
+    :navLinks="navLinks"/>
     <Main />
-    <Footer />
+    <Footer  
+    :navLinks="navLinks"/>
   </div>
 </template>
 
@@ -18,6 +20,38 @@ export default {
     Header,
     Main,
     Footer
+  },
+
+  data: function() {
+    return {
+      navLinks: [
+        {
+          text: "Home",
+          url: "#",
+        },
+        {
+          text: "Meet The Band",
+          url: "#",
+        },
+        {
+          text: "Live Dates",
+          url: "#",
+        },
+        {
+          text: "Latest News",
+          url: "#",
+        },
+        {
+          text: "Albums",
+          url: "#",
+        },
+        {
+          text: "Fans",
+          url: "#",
+        },
+      ],
+      
+    }
   }
 }
 </script>
