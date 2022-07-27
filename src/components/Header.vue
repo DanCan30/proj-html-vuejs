@@ -12,7 +12,8 @@
           <ul>
             <li v-for="(link, index) in navLinks" :key="index">
               <NavbarElement
-              :link="link" />
+              :link="link"
+               @click.native="collapseNavbar()"/>
             </li>
           </ul>
         </div>
@@ -140,7 +141,6 @@ export default {
           padding: 8rem 0 5rem;
 
           li {
-            display: block;
             text-align: center;
             padding: 1rem;
 

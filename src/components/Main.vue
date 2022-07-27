@@ -58,8 +58,9 @@
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem, a! Corrupti sapiente voluptatem numquam.
         </p>
         <ul>
-          <li v-for="(gig, index) in upcomingGigs" :key="index"
-          ><span>+</span><Upcoming :gig="gig"/>
+          <li v-for="(gig, index) in upcomingGigs" :key="index"  @click="selectGig(gig)" :class="{'expanded': gig.isSelected}">
+            <Upcoming 
+            :gig="gig"/>
           </li>
         </ul>
 
@@ -132,31 +133,42 @@ export default {
           eventName: "gem festival 2020",
           country: "anakalia",
           state: "georgia",
+          isSelected: false,
         },
         {
           date: "24/09/2020",
           eventName: "groovefest",
-          state: "dominical republic"
+          state: "dominical republic",
+          isSelected: false,
         },
         {
           date: "31/10/2020",
           eventName: "oasis festival 2020",
           country: "marrakech",
           state: "morocco",
+          isSelected: false,
         },
         {
           date: "07/11/2020",
           eventName: "moga festival",
           country: "essaouria",
           state: "morocco",
+          isSelected: false,
         },
         {
           date: "10/12/2020",
           eventName: "envision festival",
           country: "uvita",
-          state: "costa rica"
+          state: "costa rica",
+          isSelected: false,
         },
       ]
+    }
+  },
+
+  methods: {
+    selectGig: function(element) {
+      (element.isSelected === false) ? element.isSelected = true : element.isSelected = false;
     }
   }
 }
@@ -301,11 +313,12 @@ export default {
           background-color: $lightBgColor;
           margin-bottom: 1rem;
           padding: .8rem 2rem;
-          font-size: 1.3rem;
-          letter-spacing: 3px;
-          color: $brandMainColor;
-          text-transform: uppercase;
-          cursor: pointer;
+          height: 60px;
+          overflow: hidden;
+
+          &.expanded {
+            height: 100%;
+          }
 
           span {
             padding: 0 1rem;
