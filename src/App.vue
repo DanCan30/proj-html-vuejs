@@ -27,7 +27,7 @@ export default {
       navLinks: [
         {
           text: "Home",
-          url: "#",
+          url: "#top-page",
         },
         {
           text: "Meet The Band",
@@ -35,11 +35,11 @@ export default {
         },
         {
           text: "Live Dates",
-          url: "#",
+          url: "#live-date-section",
         },
         {
           text: "Latest News",
-          url: "#",
+          url: "#article-section",
         },
         {
           text: "Albums",

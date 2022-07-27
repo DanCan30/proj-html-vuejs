@@ -26,7 +26,7 @@
       <p>There is an untold story behind every favourite song.</p>
       <div id="button-container">
         <a href="#" class="main-btn">Latest album</a>
-        <a href="#" class="secondary-btn">live dates</a>
+        <a href="#live-date-section" class="secondary-btn">live dates</a>
       </div>
     </section>
     <a id="top-anchor" :class="{'visible': isScrolled}" href="#top-page"><i class="fa-solid fa-angle-up"></i></a>
@@ -92,7 +92,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import "../assets/stiles/variables.scss";
 
   header {

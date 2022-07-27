@@ -1,6 +1,6 @@
 <template>
   <div class="element">
-    <div  @click="selectGig(gig)">
+    <div class="gig-thumbnail" @click="selectGig(gig)">
         <span class="expand-button" v-if="!gig.isSelected">+</span>
         <span class="collapse-button" v-else>-</span>
         <span class="gig">{{gig.date}} {{gig.eventName}} - {{(gig.country) ? gig.country +"," : ""}} {{gig.state}}</span>
@@ -17,7 +17,7 @@
             <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum quo totam maxime consectetur magnam amet ipsum atque quia non debitis repudiandae, provident excepturi iste. Voluptate voluptatum cupiditate dolor autem veniam.
             </p>
-            <a href="#">Book now</a>
+            <a>Book now</a>
         </div>
     </div>
     
@@ -43,9 +43,10 @@ export default {
 
 <style lang="scss" scoped>
 @import "../assets/stiles/variables.scss";
-    
-    span {
+
+    .gig-thumbnail {
         cursor: pointer;
+
     }
 
     .gig {
@@ -110,6 +111,7 @@ export default {
                 color: white;
                 background-color: $brandMainColor;
                 transition: .2s;
+                cursor: pointer;
 
                 &:hover {
                     background-color: white;

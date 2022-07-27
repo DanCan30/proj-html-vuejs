@@ -33,7 +33,7 @@
 
     </section>
 
-    <a href="#">view all latest news</a>
+    <a href="#article-section">view all latest news</a>
     <section id="play-section">
 
       <div id="play-section-wrapper">
@@ -305,7 +305,6 @@ export default {
           }
         }
       }
-    
     }
 
     #live-date-wrapper {
@@ -335,8 +334,6 @@ export default {
         }
       }
     }
-  
-    
   }
 
 
