@@ -58,7 +58,7 @@
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem, a! Corrupti sapiente voluptatem numquam.
         </p>
         <ul>
-          <li v-for="(gig, index) in upcomingGigs" :key="index"  @click="selectGig(gig)" :class="{'expanded': gig.isSelected}">
+          <li v-for="(gig, index) in upcomingGigs" :key="index"  :class="{'expanded': gig.isSelected}">
             <Upcoming 
             :gig="gig"/>
           </li>
@@ -166,11 +166,6 @@ export default {
     }
   },
 
-  methods: {
-    selectGig: function(element) {
-      (element.isSelected === false) ? element.isSelected = true : element.isSelected = false;
-    }
-  }
 }
 </script>
 
@@ -303,6 +298,11 @@ export default {
         img {
           padding-top: 4rem;
           cursor: pointer;
+          transition: .2s;
+
+          &:hover {
+            transform: scale(1.1);
+          }
         }
       }
     

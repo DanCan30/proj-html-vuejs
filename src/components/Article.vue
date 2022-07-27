@@ -7,6 +7,10 @@
           <h3>{{ article.title }}</h3>
           <p>{{article.subtitle}}</p>
         </div>
+
+        <div class="hovered-div">
+          <h3>{{ article.title }}</h3>
+        </div>
     </div>
 </template>
 
@@ -29,11 +33,14 @@ export default {
     .card {
         cursor: pointer;
         position: relative;
+        overflow: hidden;
         
         img {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        transition: .1s;
+
         }
 
         .article-infos {
@@ -43,6 +50,9 @@ export default {
             bottom: 0;
             left: 0;
             right: 0;
+            transition: .2s;
+
+
 
             h3 {
                 font-size: 1.5rem;
@@ -56,6 +66,45 @@ export default {
                 line-height: 2rem;
             }
         }
+
+        .hovered-div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            box-shadow: inset 0 0 0 300px rgba(234, 74, 86, .5);
+            color: $mainTextsFontColor;
+            transition: .2s;
+            transition-delay: .1s;
+
+            h3 {
+                text-transform: capitalize;
+                letter-spacing: 3px;
+                font-weight: 300;
+            }
+
+        }
+
+        &:hover {
+
+        img {
+            transform: scale(1.2);
+        }
+
+        .hovered-div {
+            top: 0;
+
+        } 
+        
+        .article-infos {
+            bottom: -15rem;
+        }
     }
+    }
+
 
 </style>

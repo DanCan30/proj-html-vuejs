@@ -1,8 +1,11 @@
 <template>
   <div class="element">
-    <span class="expand-button" v-if="!gig.isSelected">+</span>
-    <span class="collapse-button" v-else>-</span>
-    <span class="gig">{{gig.date}} {{gig.eventName}} - {{(gig.country) ? gig.country +"," : ""}} {{gig.state}}</span>
+    <div  @click="selectGig(gig)">
+        <span class="expand-button" v-if="!gig.isSelected">+</span>
+        <span class="collapse-button" v-else>-</span>
+        <span class="gig">{{gig.date}} {{gig.eventName}} - {{(gig.country) ? gig.country +"," : ""}} {{gig.state}}</span>
+    </div>
+   
     <div class="gig-info">
         <div class="gig-map">
             <img src="../assets/img/Map-placeholder.jpg" alt="Gig map">
@@ -27,6 +30,12 @@ export default {
         gig: {
             type: Object,
             required: true,
+        }
+    },
+    
+    methods: {
+        selectGig: function(element) {
+        (element.isSelected === false) ? element.isSelected = true : element.isSelected = false;
         }
     }
 }
@@ -84,6 +93,7 @@ export default {
                 color: white;
                 text-transform: capitalize;
                 font-size: 1.5rem;
+                font-weight: 300;
                 letter-spacing: 2px;
             }
 
@@ -99,6 +109,13 @@ export default {
                 text-decoration: none;
                 color: white;
                 background-color: $brandMainColor;
+                transition: .2s;
+
+                &:hover {
+                    background-color: white;
+                    color: $brandMainColor;
+                    transform: scale(1.1);
+                }
             }
         }
     }
