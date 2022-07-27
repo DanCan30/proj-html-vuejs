@@ -3,12 +3,14 @@
 
     <div id="topbar">
       <img src="../assets/img/avada-music-logo.png" alt="Avada Logo">
-      <nav>
-        
-        <i @click="expandNavbar()" class="fa-solid fa-bars"></i>
 
+        <!-- Hidden navbar -->
+      <nav>     
+
+        <i @click="expandNavbar()" class="fa-solid fa-bars"></i>
+          
         <div id="header-navbar" :class="{'expanded': navExpanded === true}">
-        <i v-show="navExpanded" @click="collapseNavbar()" class="fa-solid fa-xmark"></i>
+          <i v-show="navExpanded" @click="collapseNavbar()" class="fa-solid fa-xmark"></i>
           <ul>
             <li v-for="(link, index) in navLinks" :key="index">
               <NavbarElement
@@ -29,7 +31,9 @@
         <a href="#live-date-section" class="secondary-btn">live dates</a>
       </div>
     </section>
-    <a id="top-anchor" :class="{'visible': isScrolled}" href="#top-page"><i class="fa-solid fa-angle-up"></i></a>
+
+    <!-- Anchor to top -->
+    <a id="to-top-anchor" :class="{'visible': isScrolled}" href="#top-page"><i class="fa-solid fa-angle-up"></i></a>
   </header>
 
 </template>
@@ -251,11 +255,9 @@ export default {
 
         }
       }
-
-    
     }
 
-    #top-anchor {
+    #to-top-anchor {
       display: inline-block;
       padding: .5rem 1.5rem;
       border-radius: 10px 10px 0 0;

@@ -14,7 +14,8 @@
     </section>
 
     <section id="article-section">
-      <div id="article-section-wrapper">
+
+      <div id="article-title-wrapper">
         <h2>
           Latest Band News
         </h2>
@@ -27,7 +28,8 @@
       <div id="cards-container">
 
         <Article v-for="(article, index) in articles" :key="index"
-        :article="article"/>
+        :article="article" 
+        />
 
       </div>
 
@@ -133,12 +135,14 @@ export default {
           eventName: "gem festival 2020",
           country: "anakalia",
           state: "georgia",
+          description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum quo totam maxime consectetur magnam amet ipsum atque quia non debitis repudiandae, provident excepturi iste. Voluptate voluptatum cupiditate dolor autem veniam.",
           isSelected: false,
         },
         {
           date: "24/09/2020",
           eventName: "groovefest",
           state: "dominical republic",
+          description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum quo totam maxime consectetur magnam amet ipsum atque quia non debitis repudiandae, provident excepturi iste. Voluptate voluptatum cupiditate dolor autem veniam.",
           isSelected: false,
         },
         {
@@ -146,6 +150,7 @@ export default {
           eventName: "oasis festival 2020",
           country: "marrakech",
           state: "morocco",
+          description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum quo totam maxime consectetur magnam amet ipsum atque quia non debitis repudiandae, provident excepturi iste. Voluptate voluptatum cupiditate dolor autem veniam.",
           isSelected: false,
         },
         {
@@ -153,6 +158,7 @@ export default {
           eventName: "moga festival",
           country: "essaouria",
           state: "morocco",
+          description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum quo totam maxime consectetur magnam amet ipsum atque quia non debitis repudiandae, provident excepturi iste. Voluptate voluptatum cupiditate dolor autem veniam.",
           isSelected: false,
         },
         {
@@ -160,6 +166,7 @@ export default {
           eventName: "envision festival",
           country: "uvita",
           state: "costa rica",
+          description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum quo totam maxime consectetur magnam amet ipsum atque quia non debitis repudiandae, provident excepturi iste. Voluptate voluptatum cupiditate dolor autem veniam.",
           isSelected: false,
         },
       ]
@@ -206,7 +213,7 @@ export default {
     }
 
     #intro-section-wrapper p,
-    #article-section-wrapper p,
+    #article-title-wrapper p,
     #live-date-section p {
       font-family: $serifFont;
       max-width: 60rem;
@@ -249,12 +256,10 @@ export default {
       }
 
       .card.vertical-card {
-        background-color: salmon;
         height: 732px;
       }
       
       .card.horizontal-card {
-        background-color: lightblue;
         height: 350px;
 
       }

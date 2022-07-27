@@ -1,16 +1,21 @@
 <template>
   <footer>
+
     <section id="footer-top">
+
       <img src="../assets/img/logo_footer.png" alt="Avada Music logo">
+
       <ul class="footer-nav">
         <li v-for="(link, index) in navLinks" :key="index">
           <NavbarElement class="nav-links"
           :link="link"/>
         </li>
-        
       </ul>
+      
     </section>
+
     <section id="footer-bottom">
+
       <div id="copyrights">
         <span>© Copyright 2021 - 2020 | AVADA THEME BY THEMEFUSION | ALL RIGHTS RESERVED | POWERED BY ME</span>
       </div>

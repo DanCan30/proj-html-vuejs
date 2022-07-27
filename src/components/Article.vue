@@ -8,7 +8,7 @@
           <p>{{article.subtitle}}</p>
         </div>
 
-        <div class="hovered-div">
+        <div class="overlay">
           <h3>{{ article.title }}</h3>
         </div>
     </div>
@@ -67,7 +67,7 @@ export default {
             }
         }
 
-        .hovered-div {
+        .overlay {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -91,19 +91,19 @@ export default {
 
         &:hover {
 
-        img {
-            transform: scale(1.2);
-        }
+            img {
+                transform: scale(1.2);
+            }
 
-        .hovered-div {
-            top: 0;
+            .overlay {
+                top: 0;
 
-        } 
-        
-        .article-infos {
-            bottom: -15rem;
+            } 
+            
+            .article-infos {
+                bottom: -15rem;
+            }
         }
-    }
     }
 
 

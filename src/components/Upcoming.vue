@@ -1,11 +1,14 @@
 <template>
   <div class="element">
-    <div class="gig-thumbnail" @click="selectGig(gig)">
+
+    <!-- Always visible thumbnail -->
+    <div class="gig-thumbnail" @click="expandGigElement(gig)">
         <span class="expand-button" v-if="!gig.isSelected">+</span>
         <span class="collapse-button" v-else>-</span>
         <span class="gig">{{gig.date}} {{gig.eventName}} - {{(gig.country) ? gig.country +"," : ""}} {{gig.state}}</span>
     </div>
    
+   <!-- Details are hidden by the overflow and becomes visible only when a thumbnail is clicked -->
     <div class="gig-info">
         <div class="gig-map">
             <img src="../assets/img/Map-placeholder.jpg" alt="Gig map">
@@ -15,7 +18,7 @@
                 {{gig.eventName}}
             </h4>
             <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum quo totam maxime consectetur magnam amet ipsum atque quia non debitis repudiandae, provident excepturi iste. Voluptate voluptatum cupiditate dolor autem veniam.
+                {{gig.description}}
             </p>
             <a>Book now</a>
         </div>
@@ -34,8 +37,8 @@ export default {
     },
     
     methods: {
-        selectGig: function(element) {
-        (element.isSelected === false) ? element.isSelected = true : element.isSelected = false;
+        expandGigElement: function(element) {
+            (element.isSelected === false) ? element.isSelected = true : element.isSelected = false;
         }
     }
 }
