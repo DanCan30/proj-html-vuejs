@@ -95,28 +95,27 @@ export default {
 
     #footer-top {
       
-        li {
-          display: inline-block;
-          font-family: $serifFont;
-          padding: 0 .5rem;
+      li {
+        display: inline-block;
+        font-family: $serifFont;
+        padding: 0 .5rem;
 
-          div.nav-links a {
-            text-decoration: none;
-            padding: .5rem;
-            transition: all .2s;
-            color: #aeaeaeaf;
-            font-size: 1.2rem;
+        div.nav-links a {
+          text-decoration: none;
+          padding: .5rem;
+          transition: all .2s;
+          color: #aeaeaeaf;
+          font-size: 1.2rem;
 
-            &:hover {
-              color: $mainTextsFontColor;
-            }
+          &:hover {
+            color: $mainTextsFontColor;
           }
         }
+      }
     }
 
     #footer-bottom {
       background-color: $darkBgColor;
-
       
       span {
         font-family: $serifFont;
@@ -149,8 +148,6 @@ export default {
           padding: 1rem 1.5rem;
         }
       }
-    
-
     }
   }
 </style>

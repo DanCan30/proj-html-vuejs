@@ -8,7 +8,7 @@
           <p>{{article.subtitle}}</p>
         </div>
 
-        <div class="overlay">
+        <div class="article-overlay">
           <h3>{{ article.title }}</h3>
         </div>
     </div>
@@ -67,7 +67,7 @@ export default {
             }
         }
 
-        .overlay {
+        .article-overlay {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -95,7 +95,7 @@ export default {
                 transform: scale(1.2);
             }
 
-            .overlay {
+            .article-overlay {
                 top: 0;
 
             } 

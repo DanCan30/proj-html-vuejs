@@ -5,7 +5,7 @@
     <div class="gig-thumbnail" @click="expandGigElement(gig)">
         <span class="expand-button" v-if="!gig.isSelected">+</span>
         <span class="collapse-button" v-else>-</span>
-        <span class="gig">{{gig.date}} {{gig.eventName}} - {{(gig.country) ? gig.country +"," : ""}} {{gig.state}}</span>
+        <span class="gig">{{gig.date}} {{gig.eventName}} - {{(gig.country) ? gig.country + "," : ""}} {{gig.state}}</span>
     </div>
    
    <!-- Details are hidden by the overflow and becomes visible only when a thumbnail is clicked -->
@@ -20,7 +20,7 @@
             <p>
                 {{gig.description}}
             </p>
-            <a>Book now</a>
+            <a href="#">Book now</a>
         </div>
     </div>
     
@@ -49,7 +49,6 @@ export default {
 
     .gig-thumbnail {
         cursor: pointer;
-
     }
 
     .gig {
