@@ -250,7 +250,7 @@ export default {
           &:hover {
             background-color: white;
             color: black;
-            letter-spacing: 5px;
+            transform: scale(1.1);
           }
 
         }
