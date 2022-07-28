@@ -100,7 +100,7 @@ export default {
           font-family: $serifFont;
           padding: 0 .5rem;
 
-          a.nav-links {
+          div.nav-links a {
             text-decoration: none;
             padding: .5rem;
             transition: all .2s;
